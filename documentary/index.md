@@ -1,11 +1,11 @@
-# my-new-package
+# yarn-s
 
-%NPM: my-new-package%
+%NPM: yarn-s%
 
-`my-new-package` is {{ description }}
+`yarn-s` is Run Multiple Yarn Commands In Series.
 
 ```sh
-yarn add my-new-package
+yarn add yarn-s
 ```
 
 ## Table Of Contents

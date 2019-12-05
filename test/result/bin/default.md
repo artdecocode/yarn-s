@@ -2,7 +2,7 @@
 test/fixture/test.txt
 
 /* stdout */
-my-new-package called with a test file
+yarn-s called with a test file
 
 a test file
 

@@ -3,16 +3,16 @@
 The package is available by importing its default function:
 
 ```js
-import myNewPackage from 'my-new-package'
+import yarnS from 'yarn-s'
 ```
 
 %~%
 
-<typedef method="myNewPackage">types/api.xml</typedef>
+<typedef method="yarnS">types/api.xml</typedef>
 
 <typedef>types/index.xml</typedef>
 
-%EXAMPLE: example, ../src => my-new-package%
+%EXAMPLE: example, ../src => yarn-s%
 %FORK example%
 
 %~%

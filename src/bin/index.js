@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 require('alamode')()
-require('./mnp')
+require('./yarn-s')

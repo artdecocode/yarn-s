@@ -1,6 +1,6 @@
-<types namespace="_myNewPackage">
-  <method name="myNewPackage" async return="string">
-    <arg type="!_myNewPackage.Config" name="config">The config.</arg>
-    {{ description }}
+<types namespace="_yarnS">
+  <method name="yarnS" async return="string">
+    <arg type="!_yarnS.Config" name="config">The config.</arg>
+    Run Multiple Yarn Commands In Series.
   </method>
 </types>

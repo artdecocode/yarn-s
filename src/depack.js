@@ -1,6 +1,6 @@
 import '../types/externs'
-import myNewPackage from './'
+import yarnS from './'
 
 module.exports = {
-  '_myNewPackage': myNewPackage,
+  '_yarnS': yarnS,
 }

@@ -1,10 +1,10 @@
-const { _myNewPackage } = require('./mnp')
+const { _yarnS } = require('./yarn-s')
 
 /**
- * @methodType {_myNewPackage.myNewPackage}
+ * @methodType {_yarnS.yarnS}
  */
 function myNewPackge(config) {
-  return _myNewPackage(config)
+  return _yarnS(config)
 }
 
 module.exports = myNewPackge
