@@ -1,1 +1,1 @@
-process.stdout.write('this file is fine')
+process.stdout.write('this file is fine\n')

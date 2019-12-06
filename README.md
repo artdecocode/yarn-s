@@ -12,7 +12,7 @@ yarn add yarn-s
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-- [`async yarnS(config: !Config): string`](#async-mynewpackageconfig-config-string)
+- [`async yarnS(config: !Config): !Array<{ code: number, stdout: string|undefined, stderr: string|undefined }>`](#async-yarnsconfig-config-array-code-number-stdout-stringundefined-stderr-stringundefined-)
   * [`Config`](#type-config)
 - [CLI](#cli)
 - [Copyright & License](#copyright--license)
@@ -33,7 +33,7 @@ import yarnS from 'yarn-s'
   <img src="/.documentary/section-breaks/1.svg?sanitize=true">
 </a></p>
 
-## <code>async <ins>yarnS</ins>(</code><sub><br/>&nbsp;&nbsp;`config: !Config,`<br/></sub><code>): <i>string</i></code>
+## <code>async <ins>yarnS</ins>(</code><sub><br/>&nbsp;&nbsp;`config: !Config,`<br/></sub><code>): <i>!Array<{ code: number, stdout: string|undefined, stderr: string|undefined }></i></code>
 Run Multiple Yarn Commands In Series.
 
  - <kbd><strong>config*</strong></kbd> <em><code><a href="#type-config" title="Options for the program.">!Config</a></code></em>: The config.
@@ -41,24 +41,24 @@ Run Multiple Yarn Commands In Series.
 __<a name="type-config">`Config`</a>__: Options for the program.
 
 
-|   Name    |       Type       |    Description    | Default |
-| --------- | ---------------- | ----------------- | ------- |
-| shouldRun | <em>boolean</em> | A boolean option. | `true`  |
-| text      | <em>string</em>  | A text to return. | -       |
+|     Name     |             Type              |       Description       |
+| ------------ | ----------------------------- | ----------------------- |
+| __scripts*__ | <em>!Array&lt;string&gt;</em> | The scripts to execute. |
 
 ```js
 import yarnS from 'yarn-s'
 
 (async () => {
   const res = await yarnS({
-    text: 'example',
+    scripts: ['pass'],
   })
   console.log(res)
 })()
 ```
 ```
-yarn-s called with example
-example
+$ node test/fixture/pass
+this file is fine
+[ { code: 0, stdout: undefined, stderr: undefined } ]
 ```
 
 <p align="center"><a href="#table-of-contents">
@@ -78,19 +78,9 @@ The package can also be used from the CLI.
   </tr>
  </thead>
   <tr>
-   <td>input</td>
+   <td>scripts</td>
    <td></td>
-   <td>The path to the input file.</td>
-  </tr>
-  <tr>
-   <td>--output</td>
-   <td>-o</td>
-   <td>Where to save the output. By default prints to stdout. Default <code>-</code>.</td>
-  </tr>
-  <tr>
-   <td>--init</td>
-   <td>-i</td>
-   <td>Initialise in the current folder.</td>
+   <td>The scripts to execute in series.</td>
   </tr>
   <tr>
    <td>--help</td>
@@ -107,18 +97,32 @@ The package can also be used from the CLI.
 ```
 Run Multiple Yarn Commands In Series.
 
-  yarn-s input [-o output] [-ihv]
+  yarn-s script[,script,...]
 
-	input        	The path to the input file.
-	--output, -o 	Where to save the output. By default prints to stdout.
-	             	Default: -.
-	--init, -i   	Initialise in the current folder.
+	scripts      	The scripts to execute in series.
 	--help, -h   	Print the help information and exit.
 	--version, -v	Show the version's number and exit.
 
   Example:
 
-    yarn-s example.txt -o out.txt
+    yarn-s script-1 script-2
+```
+
+The program will exit with status code 1 if one of the scripts exited with non-zero code.
+
+**pass**
+%EXAPMLE: test/fixture/pass%
+**fail**
+%EXAPMLE: test/fixture/fail%
+
+**yarn-s pass fail**
+
+```
+$ node test/fixture/pass
+this file is fine
+$ node test/fixture/fail
+hello worinfo Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+Command "fail" existed with code 1
 ```
 
 <p align="center"><a href="#table-of-contents">

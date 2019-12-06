@@ -11,7 +11,8 @@ pass pass
 
 /* stdout */
 $ node test/fixture/pass
-this file is fine$ node test/fixture/pass
+this file is fine
+$ node test/fixture/pass
 this file is fine
 /**/
 
