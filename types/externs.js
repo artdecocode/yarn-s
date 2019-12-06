@@ -12,12 +12,7 @@ var _yarnS = {}
  */
 _yarnS.Config
 /**
- * A boolean option. Default `true`.
- * @type {boolean|undefined}
+ * The scripts to execute.
+ * @type {!Array<string>}
  */
-_yarnS.Config.prototype.shouldRun
-/**
- * A text to return.
- * @type {string|undefined}
- */
-_yarnS.Config.prototype.text
+_yarnS.Config.prototype.scripts

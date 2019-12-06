@@ -1,6 +1,6 @@
-## returns the correct output
-test
+## passes
+pass
 
 /* expected */
-test
+[{"code":0}]
 /**/

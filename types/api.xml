@@ -1,5 +1,5 @@
 <types namespace="_yarnS">
-  <method name="yarnS" async return="string">
+  <method name="yarnS" async return="!Array<{ code: number, stdout: string|undefined, stderr: string|undefined }>">
     <arg type="!_yarnS.Config" name="config">The config.</arg>
     Run Multiple Yarn Commands In Series.
   </method>

@@ -1,4 +1,4 @@
-import { equal, ok } from '@zoroaster/assert'
+import { equal, throws } from '@zoroaster/assert'
 import Context from '../context'
 import yarnS from '../../src'
 
@@ -9,14 +9,9 @@ const T = {
     equal(typeof yarnS, 'function')
   },
   async 'calls package without error'() {
-    await yarnS()
-  },
-  async 'gets a link to the fixture'({ fixture }) {
-    const text = fixture`text.txt`
-    const res = await yarnS({
-      text,
+    await throws({
+      fn: yarnS,
     })
-    ok(res, text)
   },
 }
 

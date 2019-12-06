@@ -2,12 +2,20 @@ import makeTestSuite from '@zoroaster/mask'
 import Context from '../context'
 import yarnS from '../../src'
 
-export default makeTestSuite('test/result', {
+export default makeTestSuite('test/result/default', {
   async getResults() {
     const res = await yarnS({
-      text: this.input,
+      scripts: this.input.split(' '),
     })
-    return res
+    return JSON.stringify(res)
   },
+  // getThrowsConfig() {
+  //   return {
+  //     fn: yarnS,
+  //     args: {
+  //       scripts: this.input.split(' '),
+  //     },
+  //   }
+  // },
   context: Context,
 })

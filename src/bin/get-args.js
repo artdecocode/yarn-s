@@ -1,19 +1,10 @@
 import argufy from 'argufy'
 
 export const argsConfig = {
-  'input': {
-    description: 'The path to the input file.',
+  'scripts': {
+    description: 'The scripts to execute in series.',
     command: true,
-  },
-  'output': {
-    description: 'Where to save the output. By default prints to stdout.',
-    default: '-',
-    short: 'o',
-  },
-  'init': {
-    description: 'Initialise in the current folder.',
-    boolean: true,
-    short: 'i',
+    multiple: true,
   },
   'help': {
     description: 'Print the help information and exit.',
@@ -29,19 +20,9 @@ export const argsConfig = {
 const args = argufy(argsConfig)
 
 /**
- * The path to the input file.
+ * The scripts to execute in series.
  */
-export const _input = /** @type {string} */ (args['input'])
-
-/**
- * Where to save the output. By default prints to stdout. Default `-`.
- */
-export const _output = /** @type {string} */ (args['output'] || '-')
-
-/**
- * Initialise in the current folder.
- */
-export const _init = /** @type {boolean} */ (args['init'])
+export const _scripts = /** @type {(!Array<string>|string)} */ (args['scripts'])
 
 /**
  * Print the help information and exit.

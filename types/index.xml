@@ -1,10 +1,7 @@
 <types namespace="_yarnS">
   <type record name="Config" desc="Options for the program.">
-    <prop boolean name="shouldRun" default="true">
-      A boolean option.
-    </prop>
-    <prop string name="text" opt>
-      A text to return.
+    <prop type="!Array<string>" name="scripts">
+      The scripts to execute.
     </prop>
   </type>
 </types>

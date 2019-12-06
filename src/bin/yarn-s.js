@@ -1,7 +1,6 @@
-import { _help, _init, _output, _version, _input, argsConfig } from './get-args'
+import { _help, _version, _scripts, argsConfig } from './get-args'
 import { reduceUsage } from 'argufy'
 import usually from 'usually'
-import { readFileSync, writeFileSync } from 'fs'
 import { c } from 'erte'
 import Init from './commands/init'
 import yarnS from '../'
@@ -9,8 +8,8 @@ import yarnS from '../'
 if (_help) {
   const usage = usually({
     description: 'Run Multiple Yarn Commands In Series.',
-    example: 'yarn-s example.txt -o out.txt',
-    line: 'yarn-s input [-o output] [-ihv]',
+    example: 'yarn-s script-1 script-2',
+    line: 'yarn-s script[,script,...]',
     usage: reduceUsage(argsConfig),
   })
   console.log(usage)
@@ -22,18 +21,14 @@ if (_help) {
 
 (async () => {
   try {
-    if (_init) return await Init()
-    if (!_input) throw new Error('Please pass an input file.')
-    const content = /** @type {string} */ (readFileSync(_input, 'utf8'))
-    const output = await yarnS({
-      shouldRun: true,
-      text: content,
+    if (!_scripts || !_scripts.length)
+      throw new Error('Please pass at least one command.')
+    await yarnS({
+      scripts: /** @type {!Array<string>} */ (_scripts),
     })
-    if (_output == '-') console.log(output)
-    else writeFileSync(_output, output)
-    console.error('File %s successfully processed.', c(_input, 'yellow'))
   } catch (err) {
     if (process.env['DEBUG']) console.error(err.stack)
     else console.log(err.message)
+    process.exit(err.code)
   }
 })()

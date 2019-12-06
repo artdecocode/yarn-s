@@ -1,13 +1,33 @@
-## runs the binary
-test/fixture/test.txt
+## passes
+pass
 
 /* stdout */
-yarn-s called with a test file
+$ node test/fixture/pass
+this file is fine
+/**/
 
-a test file
+## passes x 2
+pass pass
 
+/* stdout */
+$ node test/fixture/pass
+this file is fine$ node test/fixture/pass
+this file is fine
+/**/
+
+## fails
+fail
+
+/* stdout */
+$ node test/fixture/fail
+hello worinfo Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+Command "fail" existed with code 1
 /**/
 
 /* stderr */
-File test/fixture/test.txt successfully processed.
+error Command failed with exit code 1.
+/**/
+
+/* code */
+1
 /**/

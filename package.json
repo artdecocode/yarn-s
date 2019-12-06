@@ -5,7 +5,7 @@
   "main": "compile/index.js",
   "module": "src/index.js",
   "scripts": {
-    "t": "zoroaster -a",
+    "t": "zoroaster -t 5000 -a",
     "test": "yarn t test/spec test/mask",
     "spec": "yarn t test/spec",
     "mask": "yarn t test/mask",
@@ -20,6 +20,8 @@
     "d1": "typal compile/index.js -u -t types/index.xml",
     "template": "typal compile/template.js -T compile/index.js -t types/api.xml",
     "externs": "typal types/externs.js",
+    "pass": "node test/fixture/pass",
+    "fail": "node test/fixture/fail",
     "args": "argufy -o src/bin/get-args.js"
   },
   "bin": {
@@ -37,7 +39,11 @@
     "type": "git",
     "url": "git://github.com/artdecocode/yarn-s.git"
   },
-  "keywords": "yarn, serial, series",
+  "keywords": [
+    "yarn",
+    "serial",
+    "series"
+  ],
   "author": "Anton <anton@adc.sh>",
   "license": "AGPL-3.0",
   "bugs": {
@@ -52,6 +58,7 @@
     "erte": "^1.2.0",
     "eslint-config-artdeco": "1.0.1",
     "indicatrix": "^1.4.0",
+    "spawncommand": "^2.2.0",
     "usually": "^1.2.0",
     "yarn-s": "1.1.0",
     "zoroaster": "^4.1.2"
