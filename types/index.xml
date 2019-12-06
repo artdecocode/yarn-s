@@ -4,4 +4,15 @@
       The scripts to execute.
     </prop>
   </type>
+  <type record name="ScriptResult" desc="The result of a script.">
+    <prop number name="code">
+      The exit code.
+    </prop>
+    <prop string name="stdout">
+      The stdout of the program.
+    </prop>
+    <prop string name="stderr">
+      The stderr of the program.
+    </prop>
+  </type>
 </types>

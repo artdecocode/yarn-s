@@ -2,9 +2,9 @@ import { c as co } from 'erte'
 import spawncommand from 'spawncommand'
 
 const run = (a) => {
-  const proc = spawncommand('yarn', [a], {
-    stdio: 'inherit',
-  })
+  const proc = spawncommand('yarn', [a])
+  proc.stdout.pipe(process.stdout)
+  proc.stderr.pipe(process.stderr)
   const { promise } = proc
   return { proc, promise }
 }

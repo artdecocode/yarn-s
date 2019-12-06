@@ -12,8 +12,9 @@ yarn add yarn-s
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-- [`async yarnS(config: !Config): !Array<{ code: number, stdout: string|undefined, stderr: string|undefined }>`](#async-yarnsconfig-config-array-code-number-stdout-stringundefined-stderr-stringundefined-)
+- [`async yarnS(config: !Config): !Array<!ScriptResult>`](#async-yarnsconfig-config-arrayscriptresult)
   * [`Config`](#type-config)
+  * [`ScriptResult`](#type-scriptresult)
 - [CLI](#cli)
 - [Copyright & License](#copyright--license)
 
@@ -33,7 +34,7 @@ import yarnS from 'yarn-s'
   <img src="/.documentary/section-breaks/1.svg?sanitize=true">
 </a></p>
 
-## <code>async <ins>yarnS</ins>(</code><sub><br/>&nbsp;&nbsp;`config: !Config,`<br/></sub><code>): <i>!Array<{ code: number, stdout: string|undefined, stderr: string|undefined }></i></code>
+## <code>async <ins>yarnS</ins>(</code><sub><br/>&nbsp;&nbsp;`config: !Config,`<br/></sub><code>): <i>!Array<!ScriptResult></i></code>
 Run Multiple Yarn Commands In Series.
 
  - <kbd><strong>config*</strong></kbd> <em><code><a href="#type-config" title="Options for the program.">!Config</a></code></em>: The config.
@@ -44,6 +45,16 @@ __<a name="type-config">`Config`</a>__: Options for the program.
 |     Name     |             Type              |       Description       |
 | ------------ | ----------------------------- | ----------------------- |
 | __scripts*__ | <em>!Array&lt;string&gt;</em> | The scripts to execute. |
+
+
+__<a name="type-scriptresult">`ScriptResult`</a>__: The result of a script.
+
+
+|    Name     |      Type       |        Description         |
+| ----------- | --------------- | -------------------------- |
+| __code*__   | <em>number</em> | The exit code.             |
+| __stdout*__ | <em>string</em> | The stdout of the program. |
+| __stderr*__ | <em>string</em> | The stderr of the program. |
 
 ```js
 import yarnS from 'yarn-s'
@@ -58,7 +69,9 @@ import yarnS from 'yarn-s'
 ```
 $ node test/fixture/pass
 this file is fine
-[ { code: 0, stdout: undefined, stderr: undefined } ]
+[ { code: 0,
+    stdout: '$ node test/fixture/pass\nthis file is fine\n',
+    stderr: '' } ]
 ```
 
 <p align="center"><a href="#table-of-contents">
