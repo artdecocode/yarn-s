@@ -1,5 +1,9 @@
 ## 6 December 2019
 
+### [1.2.1](https://github.com/artdecocode/yarn-s/compare/v1.2.0...v1.2.1)
+
+- [doc] Fix readme.
+
 ### 1.2.0
 
 - [feature] Upgrade to new package structure.
