@@ -123,10 +123,17 @@ Run Multiple Yarn Commands In Series.
 
 The program will exit with status code 1 if one of the scripts exited with non-zero code.
 
-**pass**
+<table>
+<tr><th>pass</th><th>fail</th></tr>
+<tr><td>
+
 %EXAPMLE: test/fixture/pass%
-**fail**
+</td>
+<td>
+
 %EXAPMLE: test/fixture/fail%
+</td></tr>
+</table>
 
 **yarn-s pass fail**
 
@@ -149,7 +156,7 @@ GNU Affero General Public License v3.0
 <table>
   <tr>
     <td><img src="https://avatars3.githubusercontent.com/u/38815725?v=4&amp;s=100" alt="artdecocode"></td>
-    <td>© <a href="https://artd.eco">Art Deco</a> 2019</td>
+    <td>© <a href="https://www.artd.eco">Art Deco™</a> 2019</td>
   </tr>
 </table>
 

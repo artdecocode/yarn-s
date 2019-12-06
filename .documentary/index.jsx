@@ -4,8 +4,8 @@
 export const footer = () => {
   const alt = 'artdecocode'
   const src = 'https://avatars3.githubusercontent.com/u/38815725?v=4&s=100'
-  const href = 'https://artd.eco'
-  const org = 'Art Deco'
+  const href = 'https://www.artd.eco'
+  const org = 'Art Deco™'
   const year = new Date().getFullYear()
   return [
     (<table>

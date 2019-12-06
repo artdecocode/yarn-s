@@ -8,10 +8,18 @@ The package can also be used from the CLI.
 
 The program will exit with status code 1 if one of the scripts exited with non-zero code.
 
-**pass**
+<table>
+<tr><th>pass</th><th>fail</th></tr>
+<!-- block-start -->
+<tr><td>
+
 %EXAPMLE: test/fixture/pass%
-**fail**
+</td>
+<td>
+
 %EXAPMLE: test/fixture/fail%
+</td></tr>
+</table>
 
 **yarn-s pass fail**
 
