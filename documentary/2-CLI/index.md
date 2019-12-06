@@ -13,11 +13,11 @@ The program will exit with status code 1 if one of the scripts exited with non-z
 <!-- block-start -->
 <tr><td>
 
-%EXAPMLE: test/fixture/pass%
+%EXAMPLE: test/fixture/pass%
 </td>
 <td>
 
-%EXAPMLE: test/fixture/fail%
+%EXAMPLE: test/fixture/fail%
 </td></tr>
 </table>
 

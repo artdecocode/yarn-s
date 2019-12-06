@@ -127,11 +127,16 @@ The program will exit with status code 1 if one of the scripts exited with non-z
 <tr><th>pass</th><th>fail</th></tr>
 <tr><td>
 
-%EXAPMLE: test/fixture/pass%
+```js
+process.stdout.write('this file is fine\n')
+```
 </td>
 <td>
 
-%EXAPMLE: test/fixture/fail%
+```js
+process.stdout.write('hello wor')
+process.exit(1)
+```
 </td></tr>
 </table>
 
