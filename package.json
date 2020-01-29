@@ -14,8 +14,7 @@
     "lib": "depack src/depack.js -o compile/yarn-s.js -s -a -c --source_map_include_content",
     "test-compile": "ALAMODE_ENV=test-compile yarn test",
     "lint": "eslint .",
-    "doc": "NODE_DEBUG=doc doc -o README.md -n _yarnS",
-    "wiki": "NODE_DEBUG=doc doc documentary-wiki -W wiki -n _yarnS",
+    "doc": "doc -o README.md -n _yarnS -d -a",
     "d": "yarn-s template d1 externs",
     "d1": "typal compile/index.js -u -t types/index.xml",
     "template": "typal compile/template.js -T compile/index.js -t types/api.xml",
@@ -32,13 +31,15 @@
     "src",
     "compile",
     "types/externs.js",
-    "src/bin/index.js"
+    "src/bin/index.js",
+    "typedefs.json"
   ],
   "externs": "types/externs.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/artdecocode/yarn-s.git"
   },
+  "typedefs": "typedefs.json",
   "keywords": [
     "yarn",
     "serial",
@@ -49,18 +50,18 @@
   "bugs": {
     "url": "https://github.com/artdecocode/yarn-s/issues"
   },
-  "homepage": "https://github.com/artdecocode/yarn-s#readme",
+  "homepage": "https://www.artd.eco",
   "devDependencies": {
-    "alamode": "^3.2.0",
-    "argufy": "^1.7.1",
-    "depack": "^1.0.0",
-    "documentary": "^1.34.1",
+    "alamode": "^3.3.1",
+    "argufy": "^1.7.5",
+    "depack": "^1.1.0",
+    "documentary": "^1.35.9",
     "erte": "^1.2.0",
     "eslint-config-artdeco": "1.0.1",
-    "indicatrix": "^1.4.0",
+    "indicatrix": "^1.4.1",
     "spawncommand": "^2.2.0",
     "usually": "^1.2.0",
-    "yarn-s": "1.1.0",
+    "yarn-s": "1.2.1",
     "zoroaster": "^4.1.2"
   }
 }

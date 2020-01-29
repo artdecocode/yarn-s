@@ -1,0 +1,14 @@
+{
+  "_yarnS.yarnS": {
+    "link": "https://github.com/artdecocode/yarn-s#async-yarnsconfig-config-arrayscriptresult",
+    "description": "Run Multiple Yarn Commands In Series."
+  },
+  "_yarnS.Config": {
+    "link": "https://github.com/artdecocode/yarn-s#type-config",
+    "description": "Options for the program."
+  },
+  "_yarnS.ScriptResult": {
+    "link": "https://github.com/artdecocode/yarn-s#type-scriptresult",
+    "description": "The result of a script."
+  }
+}

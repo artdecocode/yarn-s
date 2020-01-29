@@ -161,7 +161,7 @@ GNU Affero General Public License v3.0
 <table>
   <tr>
     <td><img src="https://avatars3.githubusercontent.com/u/38815725?v=4&amp;s=100" alt="artdecocode"></td>
-    <td>© <a href="https://www.artd.eco">Art Deco™</a> 2019</td>
+    <td>© <a href="https://www.artd.eco">Art Deco™</a> 2020</td>
   </tr>
 </table>
 
