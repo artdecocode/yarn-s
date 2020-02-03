@@ -1,8 +1,10 @@
 import { c as co } from 'erte'
-import spawncommand from 'spawncommand'
+import spawn from 'spawncommand'
 
 const run = (a) => {
-  const proc = spawncommand('yarn', [a])
+  const proc = spawn('yarn', [a], {
+    shell: process.platform == 'win32',
+  })
   proc.stdout.pipe(process.stdout)
   proc.stderr.pipe(process.stderr)
   const { promise } = proc
